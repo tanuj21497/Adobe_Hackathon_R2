@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Resume Builder</h1>
+    <form id="resumeForm" style="width: 60%;margin-right: 0px;display: inline-block;margin-top: 8%;overflow-y: scroll;height: 600px;">
+      <!-- <h2>Choose Template</h2> -->
+      <button type="button" class="arrow-button" onclick="toggleInfo('first')">Choose Template</button>
+      <div id="first" style="display: block;">
+        <label for="template">Select Template:</label>
+        <select id="template" name="template" class="classic">
+          <option value="1">Template 1</option>
+          <option value="2">Template 2</option>
+          <option value="3">Template 3</option>
+        </select>
+      </div>
+
+      <!-- <h2>Personal Information</h2> -->
+      <button type="button" class="arrow-button" onclick="toggleInfo('second')">Personal Information</button>
+
+      <div id="second" style="display: none;">
+      <div class="form-group">
+
+        <label for="name" style="margin-top: 10px;">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+      </div>
+      <div class="form-group">
+        <label for="email_address">Email Address:</label>
+        <input type="text" id="email_address" name="email_address" required>
+      </div>
+      <div class="form-group">
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+      </div>
+      <div class="form-group">
+        <label for="linkedin_url">LinkedIn URL:</label>
+        <input type="text" id="linkedin_url" name="linkedin_url" required>
+      </div>
+      </div>
+      <!-- <h2>Job Title</h2> -->
+      <button type="button" class="arrow-button" onclick="toggleInfo('third')">Job Title</button>
+
+      <div id="third" style="display: none;">
+      <div class="form-group">
+        <label for="job_title">Job Title:</label>
+        <input type="text" id="job_title" name="job_title" required>
+      </div>
+      </div>
+
+      <!-- <h2>Career Objective</h2> -->
+      <button type="button" class="arrow-button" onclick="toggleInfo('fourth')">Career Objective</button>
+
+      <div id="fourth" style="display: none;">
+      <div class="form-group">
+        <label for="career_objective">Career Objective:</label>
+        <textarea id="career_objective" name="career_objective" required></textarea>
+      </div>
+      </div>
+
+      <!-- <h2>Skills</h2> -->
+      <button type="button" class="arrow-button" onclick="toggleInfo('fifth')">Skills</button>
+
+      <div id="fifth" style="display: none;">
+      <div id="skillsContainer">
+        <div class="form-group skill-item">
+          <label for="skills">Skill:</label>
+          <input type="text" id="skills" name="skills" required>
+        </div>
+      </div>
+      <button type="button" id="addSkillButton">Add Skills</button>
+      </div>
+
+      <!-- <h2>Education</h2> -->
+      <button type="button" class="arrow-button" onclick="toggleInfo('sixth')">Education</button>
+
+      <div id="sixth" style="display: none;">
+      <div id="educationContainer">
+        <div class="form-group education-item">
+          <label for="school_name_1">School Name:</label>
+          <input type="text" id="school_name_1" name="school_name" required>
+        </div>
+        <div class="form-group education-item">
+          <label for="passing_year_1">Passing Year:</label>
+          <input type="text" id="passing_year_1" name="passing_year" required>
+        </div>
+        <div class="form-group education-item">
+          <label for="description_1">Description:</label>
+          <textarea id="description_1" name="description" required></textarea>
+        </div>
+      </div>
+      <button type="button" id="addEducationButton">Add Education</button>
+
+    </div>
+      <!-- <h2>Experience</h2> -->
+      <button type="button" class="arrow-button" onclick="toggleInfo('seventh')">Experience</button>
+
+      <div id="seventh" style="display: none;">
+      <div id="experienceContainer">
+        <div class="form-group experience-item">
+          <label for="company_name_2">Company Name:</label>
+          <input type="text" id="company_name_2" name="company_name" required>
+        </div>
+        <div class="form-group experience-item">
+          <label for="passing_year_2">Passing Year:</label>
+          <input type="text" id="passing_year_2" name="passing_year" required>
+        </div>
+        <div class="form-group experience-item">
+          <label for="responsibilities_2">Responsibilities:</label>
+          <textarea id="responsibilities_2" name="responsibilities" required></textarea>
+        </div>
+      </div>
+      <button type="button" id="addExperienceButton">Add Experience</button>
+      </div>
+      <!-- <h2>Achievements</h2> -->
+      <button type="button" class="arrow-button" onclick="toggleInfo('eight')">Achievements</button>
+
+      <div id="eight" style="display: none;">
+      <div id="achievementsContainer">
+        <div class="form-group achievements-item">
+          <label for="field_1">Field:</label>
+          <input type="text" id="field_1" name="field" required>
+        </div>
+        <div class="form-group achievements-item">
+          <label for="awards_1">Awards:</label>
+          <input type="text" id="awards_1" name="awards" required>
+        </div>
+      </div>
+      <button type="button" id="addAchievementsButton">Add Achievements</button>
+
+      </div>
+      <div class="form-group">
+        <br>
+        <br>
+        <p id="not-filled">(required fields not filled. Check Again)</p>
+        
+        <button type="submit" id="SubmitButton">Submit</button>
+      </div>
+    </form>
+    <div class="half">
+          <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="image1.jpg" style="width:100%">
+      <div class="text">Template 1</div>
+
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="image2.jpg" style="width:100%">
+      <div class="text">Template 2</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="image3.jpg" style="width:100%">
+      <div class="text">Template 3</div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+      
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
